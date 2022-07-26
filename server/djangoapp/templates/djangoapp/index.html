@@ -67,24 +67,22 @@
                 </tr>
             </thead>
              <tbody>
-                {% for dealer in dealerships%}
+                {% for dealer in dealership_list %}
                     <tr>
                         <td>{{dealer.id}}</td>
+                        <td><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>   
                         <td>{{dealer.city}}</td>
                         <td>{{dealer.address}}</td>
                         <td>{{dealer.zip}}</td>
                         <td>{{dealer.st}}</td>
-                    </tr>                
+                    </tr>
                 {% endfor %}
              </tbody>
         </table>
         </div>
-        <footer class="fixed-bottom">
-              <div class="container-fluid">
-                <a href="{% url 'djangoapp:contact' %}">Contact Us</a>
-              </div>
-        </footer>
     </div>
+
     </body>
+
 </html>
 
