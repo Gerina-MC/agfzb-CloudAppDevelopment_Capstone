@@ -48,7 +48,7 @@ class CarModel(models.Model):
     make = models.ForeignKey(CarMake, null=False, on_delete=models.CASCADE)  
     name = models.CharField( max_length=50, default='')
     dealer_id = models.IntegerField(default=1)        
-    type_c = models.CharField(max_length=20, choices=(('Sedan', 'Sedan',), ('SUV', 'SUV'), ('HATCHBACK', 'HATCHBACK'),('WAGON', 'WAGON')))
+    type = models.CharField(max_length=20, choices=(('Sedan', 'Sedan',), ('SUV', 'SUV'), ('HATCHBACK', 'HATCHBACK'),('WAGON', 'WAGON')))
     year = models.DateTimeField(null=True)
 
     def __str__(self):
